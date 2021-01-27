@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9976E767-1789-406A-A099-BF068EE3D06D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Blackoffice.My.MyApplication</StartupObject>
+    <RootNamespace>Blackoffice</RootNamespace>
+    <AssemblyName>Blackoffice</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Blackoffice.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Blackoffice.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>273_2736145_credit_card_payment_pos_icon_flat_pFz_12.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TouchPOS\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="VS2005Extender">
+      <HintPath>F:\BCI\DockPanelSkin\DockPanelSkin\bin\Debug\VS2005Extender.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>F:\BCI\DockPanelSkin\DockPanelSkin\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\AUTO_UPDATE.vb" />
+    <Compile Include="Class\CL_constan.vb" />
+    <Compile Include="Class\CL_Delegate.vb" />
+    <Compile Include="Master\F_Mas_Product_Menu.Designer.vb">
+      <DependentUpon>F_Mas_Product_Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_Mas_Product_Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\F_MAS_REASON.Designer.vb">
+      <DependentUpon>F_MAS_REASON.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_MAS_REASON.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\F_Mas_Product_Type.Designer.vb">
+      <DependentUpon>F_Mas_Product_Type.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_Mas_Product_Type.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\F_MAS_Permiss.Designer.vb">
+      <DependentUpon>F_MAS_Permiss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_MAS_Permiss.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\API_VersionModels.vb" />
+    <Compile Include="Class\CL_config.vb" />
+    <Compile Include="Class\Tmp_Data.vb" />
+    <Compile Include="Main\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\F_Lockin.Designer.vb">
+      <DependentUpon>F_Lockin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\F_Lockin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\F_pass.Designer.vb">
+      <DependentUpon>F_pass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\F_pass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\F_Setting.Designer.vb">
+      <DependentUpon>F_Setting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\F_Setting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\F_Mas_Product_Group.Designer.vb">
+      <DependentUpon>F_Mas_Product_Group.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_Mas_Product_Group.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\F_MAS_Product.Designer.vb">
+      <DependentUpon>F_MAS_Product.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_MAS_Product.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\F_MAS_Stock.Designer.vb">
+      <DependentUpon>F_MAS_Stock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_MAS_Stock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\F_MAS_Unit.Designer.vb">
+      <DependentUpon>F_MAS_Unit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\F_MAS_Unit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\COMPANYPROFILE_Models.vb" />
+    <Compile Include="Models\Data_Config_Model.vb" />
+    <Compile Include="Models\MAS_DOCTYPE_Models.vb" />
+    <Compile Include="Models\MAS_DOC_STATUS_MODELS.vb" />
+    <Compile Include="Models\MAS_Menu_Permis_Models.vb" />
+    <Compile Include="Models\Mas_Product_Group_Models.vb" />
+    <Compile Include="Models\MAS_REASON_Models.vb" />
+    <Compile Include="Models\MAS_PRODUCT_TYPE_Models.vb" />
+    <Compile Include="Models\Mas_Stock_Models.vb" />
+    <Compile Include="Models\Mas_Product_Model.vb" />
+    <Compile Include="Models\Mas_Product_UNIT_Models.vb" />
+    <Compile Include="Models\RPT_BalanceModels.vb" />
+    <Compile Include="Models\RPT_ReceiveModels.vb" />
+    <Compile Include="Models\RPT_StockcardModels.vb" />
+    <Compile Include="Models\SCR_MODELS.vb" />
+    <Compile Include="Models\SysVersionModel.vb" />
+    <Compile Include="Models\TR_Mmovment_Models.vb" />
+    <Compile Include="Models\USERPROFILE_Mmodels.vb" />
+    <Compile Include="Module1.vb" />
+    <Compile Include="Popup\F_SearchData.Designer.vb">
+      <DependentUpon>F_SearchData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\F_SearchData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\F_SearchProduct.Designer.vb">
+      <DependentUpon>F_SearchProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\F_SearchProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Frm_Reportviewer.Designer.vb">
+      <DependentUpon>Frm_Reportviewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Frm_Reportviewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\F_RPT_Balance.Designer.vb">
+      <DependentUpon>F_RPT_Balance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\F_RPT_Balance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\F_RPT_Receive.Designer.vb">
+      <DependentUpon>F_RPT_Receive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\F_RPT_Receive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\F_RPT_Stockcard.Designer.vb">
+      <DependentUpon>F_RPT_Stockcard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\F_RPT_Stockcard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_ISSUE.Designer.vb">
+      <DependentUpon>F_ISSUE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_ISSUE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_Adjust.Designer.vb">
+      <DependentUpon>F_Adjust.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_Adjust.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_YearEnd_List.Designer.vb">
+      <DependentUpon>F_YearEnd_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_YearEnd_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_YearEnd.Designer.vb">
+      <DependentUpon>F_YearEnd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_YearEnd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_Receive.Designer.vb">
+      <DependentUpon>F_Receive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_Receive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_ISSUE_List.Designer.vb">
+      <DependentUpon>F_ISSUE_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_ISSUE_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_Adjust_List.Designer.vb">
+      <DependentUpon>F_Adjust_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_Adjust_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TR\F_Receive_List.Designer.vb">
+      <DependentUpon>F_Receive_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TR\F_Receive_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\Center.vb" />
+    <Compile Include="Class\Cl_massage.vb" />
+    <Compile Include="Class\Menu.vb" />
+    <Compile Include="Class\Prop_Treeview.vb" />
+    <Compile Include="Main\F_Main.Designer.vb">
+      <DependentUpon>F_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\F_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\MenuModel.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Main\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\F_Lockin.resx">
+      <DependentUpon>F_Lockin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\F_pass.resx">
+      <DependentUpon>F_pass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\F_Setting.resx">
+      <DependentUpon>F_Setting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_Mas_Product_Menu.resx">
+      <DependentUpon>F_Mas_Product_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_MAS_REASON.resx">
+      <DependentUpon>F_MAS_REASON.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_Mas_Product_Type.resx">
+      <DependentUpon>F_Mas_Product_Type.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_Mas_Product_Group.resx">
+      <DependentUpon>F_Mas_Product_Group.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_MAS_Product.resx">
+      <DependentUpon>F_MAS_Product.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_MAS_Stock.resx">
+      <DependentUpon>F_MAS_Stock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_MAS_Permiss.resx">
+      <DependentUpon>F_MAS_Permiss.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\F_MAS_Unit.resx">
+      <DependentUpon>F_MAS_Unit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\F_SearchData.resx">
+      <DependentUpon>F_SearchData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\F_SearchProduct.resx">
+      <DependentUpon>F_SearchProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Frm_Reportviewer.resx">
+      <DependentUpon>Frm_Reportviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\F_RPT_Balance.resx">
+      <DependentUpon>F_RPT_Balance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\F_RPT_Receive.resx">
+      <DependentUpon>F_RPT_Receive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\F_RPT_Stockcard.resx">
+      <DependentUpon>F_RPT_Stockcard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDLC\RPT_Balance.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDLC\RPT_Adjust.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDLC\RPT_MOV_Bytype.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDLC\RPT_Receive.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDLC\RPT_Stockcard.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_ISSUE.resx">
+      <DependentUpon>F_ISSUE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_Adjust.resx">
+      <DependentUpon>F_Adjust.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_YearEnd_List.resx">
+      <DependentUpon>F_YearEnd_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_YearEnd.resx">
+      <DependentUpon>F_YearEnd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_Receive.resx">
+      <DependentUpon>F_Receive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_ISSUE_List.resx">
+      <DependentUpon>F_ISSUE_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_Adjust_List.resx">
+      <DependentUpon>F_Adjust_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TR\F_Receive_List.resx">
+      <DependentUpon>F_Receive_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\F_Main.resx">
+      <DependentUpon>F_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\RPT_BalanceModels.Balance_data.datasource" />
+    <None Include="My Project\DataSources\RPT_BalanceModels.datasource" />
+    <None Include="My Project\DataSources\RPT_ReceiveModels.datasource" />
+    <None Include="My Project\DataSources\RPT_ReceiveModels.Rceive_data.datasource" />
+    <None Include="My Project\DataSources\RPT_StockcardModels.Stockcard_data.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Control_us\Control_US.vbproj">
+      <Project>{a942faf7-9274-4ca8-8fc0-4afee8f24e1b}</Project>
+      <Name>Control_US</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MD\MD.vbproj">
+      <Project>{9e6888a8-bece-4978-bfb3-96abdaebb9a4}</Project>
+      <Name>MD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sys.version.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\minimize50x50.png" />
+    <None Include="Resources\pass50x50.png" />
+    <None Include="Resources\Notpass50x50.png" />
+    <None Include="Resources\Delete40.png" />
+    <None Include="Resources\out50x50.jpg" />
+    <None Include="Resources\Save_Settings50x50.png" />
+    <None Include="Resources\Test50x50.jpg" />
+    <Content Include="273_2736145_credit_card_payment_pos_icon_flat_pFz_12.ico" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

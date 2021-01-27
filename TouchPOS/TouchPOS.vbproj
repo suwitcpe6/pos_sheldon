@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87EEF4A8-E83B-4828-8840-D1595D31D113}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>TouchPOS.My.MyApplication</StartupObject>
+    <RootNamespace>TouchPOS</RootNamespace>
+    <AssemblyName>TouchPOS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>TouchPOS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>TouchPOS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>273_2736145_credit_card_payment_pos_icon_flat_pFz_12.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A86D8BE99FB0B0C07307533085048424EBE9324E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TouchPOS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="aPI_cPN, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\payment hub cpn\link_api\aPI_cPN\aPI_cPN\bin\Debug\aPI_cPN.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\payment hub cpn\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Class\AUTO_UPDATE.vb" />
+    <Compile Include="Class\Center.vb" />
+    <Compile Include="Class\CL_constan.vb" />
+    <Compile Include="Class\CL_getdate.vb" />
+    <Compile Include="Class\CL_GP.vb" />
+    <Compile Include="Class\CL_LibLoading.vb" />
+    <Compile Include="Class\Cl_massage.vb" />
+    <Compile Include="Class\Loadassm.vb" />
+    <Compile Include="Class\Sale_Promotion.vb" />
+    <Compile Include="Main\F_pass.Designer.vb">
+      <DependentUpon>F_pass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\F_pass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\USERPROFILE_Mmodels.vb" />
+    <Compile Include="Models\VoidModels.vb" />
+    <Compile Include="Module1.vb" />
+    <Compile Include="Models\Data_Config_Model.vb" />
+    <Compile Include="Payment\CL_Payment_Log.vb" />
+    <Compile Include="Models\API_VersionModels.vb" />
+    <Compile Include="Models\Card_pro.vb" />
+    <Compile Include="Models\CHKcard_MultiModels.vb" />
+    <Compile Include="Models\ConfirmpayModels.vb" />
+    <Compile Include="Models\SysConfigModels.vb" />
+    <Compile Include="Models\SysVersionModel.vb" />
+    <Compile Include="Models\Tender_LogModel.vb" />
+    <Compile Include="Payment\CPN_Payment_Hub.vb" />
+    <Compile Include="Payment\Dolfin\API_Dolfin.vb" />
+    <Compile Include="Payment\Dolfin\DolfinModel.vb" />
+    <Compile Include="Payment\GHL_EDC_Payment.vb" />
+    <Compile Include="Payment\Payment_center.vb" />
+    <Compile Include="Payment\Pay_QRThai\API_THAI_QR.vb" />
+    <Compile Include="Payment\Pay_QRThai\THAI_QRModel.vb" />
+    <Compile Include="Payment\Pay_true\API_true.vb" />
+    <Compile Include="Class\CL_config.vb" />
+    <Compile Include="Class\CL_Flowlayout.vb" />
+    <Compile Include="Report\CL_PrintDocument.vb" />
+    <Compile Include="Models\CardModels.vb" />
+    <Compile Include="Models\CHK_cardsModels.vb" />
+    <Compile Include="Models\SHOP_Buttons_Models.vb" />
+    <Compile Include="Models\TenderModels.vb" />
+    <Compile Include="Payment\Pay_true\TrueQueryPaymentRequestModel.vb" />
+    <Compile Include="Payment\Pay_true\TrueQueryPaymentResponseModel.vb" />
+    <Compile Include="Payment\Pay_true\TrueQueryRequestModel.vb" />
+    <Compile Include="Payment\Pay_true\TrueQueryResponseModel.vb" />
+    <Compile Include="Payment\Pay_true\TrueRequestModel.vb" />
+    <Compile Include="Payment\Pay_true\TrueResponseModel.vb" />
+    <Compile Include="UI\F_Approver.Designer.vb">
+      <DependentUpon>F_Approver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_Approver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\F_card_alert.Designer.vb">
+      <DependentUpon>F_card_alert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_card_alert.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\F_Lockin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\F_Lockin.Designer.vb">
+      <DependentUpon>F_Lockin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\F_Main_Sale.Designer.vb">
+      <DependentUpon>F_Main_Sale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\F_Main_Sale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\F_Setting.Designer.vb">
+      <DependentUpon>F_Setting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\F_Setting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\SALE_Models.vb" />
+    <Compile Include="Models\SHOP_ModelS.vb" />
+    <Compile Include="Models\WORKINGDATE_Models.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\F_Display2.Designer.vb">
+      <DependentUpon>F_Display2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_Display2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\F_Void.Designer.vb">
+      <DependentUpon>F_Void.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_Void.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\F_Repay.Designer.vb">
+      <DependentUpon>F_Repay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_Repay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prop\Prop_Form.vb" />
+    <Compile Include="UC\Product_Items.Designer.vb">
+      <DependentUpon>Product_Items.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Product_Items.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\F_Multicard.Designer.vb">
+      <DependentUpon>F_Multicard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_Multicard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\F_payment.Designer.vb">
+      <DependentUpon>F_payment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_payment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\F_Reprint.Designer.vb">
+      <DependentUpon>F_Reprint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\F_Reprint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Main\F_pass.resx">
+      <DependentUpon>F_pass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_Approver.resx">
+      <DependentUpon>F_Approver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_card_alert.resx">
+      <DependentUpon>F_card_alert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\F_Lockin.resx">
+      <DependentUpon>F_Lockin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\F_Main_Sale.resx">
+      <DependentUpon>F_Main_Sale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\F_Setting.resx">
+      <DependentUpon>F_Setting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Product_Items.resx">
+      <DependentUpon>Product_Items.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_Display2.resx">
+      <DependentUpon>F_Display2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_Multicard.resx">
+      <DependentUpon>F_Multicard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_payment.resx">
+      <DependentUpon>F_payment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_Void.resx">
+      <DependentUpon>F_Void.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_Repay.resx">
+      <DependentUpon>F_Repay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\F_Reprint.resx">
+      <DependentUpon>F_Reprint.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="TouchPOS_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="273_2736145_credit_card_payment_pos_icon_flat_pFz_12.ico" />
+    <None Include="Resources\No_image_available50.svg.png" />
+    <None Include="Resources\Airpay50.png" />
+    <None Include="Resources\Truemoney250x50.png" />
+    <None Include="Resources\Thai_QR40x40.jpg" />
+    <None Include="Resources\Thai_QR40.jpg" />
+    <None Include="Resources\Wechat80x80.png" />
+    <None Include="Resources\Wechat50x50.png" />
+    <None Include="Resources\Alipay50x50.png" />
+    <None Include="Resources\Alipay80x80.png" />
+    <None Include="Resources\dolfin80x80.png" />
+    <None Include="Resources\Rabbitcard50.png" />
+    <None Include="Resources\Rabbitline.jpg" />
+    <None Include="Resources\refresh40.jpg" />
+    <None Include="Resources\refresh201.jpg" />
+    <None Include="Resources\refresh30.jpg" />
+    <None Include="Resources\minimize50x50.png" />
+    <None Include="Resources\defaultfood.png" />
+    <None Include="Resources\default-food-image.jpg" />
+    <None Include="Resources\Delete40.png" />
+    <None Include="Resources\Restart40.png" />
+    <None Include="packages.config" />
+    <None Include="Resources\out50x50.jpg" />
+    <None Include="Resources\out.jpg" />
+    <None Include="Resources\Save_Settings50x50.png" />
+    <None Include="Resources\Notpass50x50.png" />
+    <None Include="Resources\pass50x50.png" />
+    <None Include="Resources\Test50x50.jpg" />
+    <None Include="Resources\pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Control_us\Control_US.vbproj">
+      <Project>{a942faf7-9274-4ca8-8fc0-4afee8f24e1b}</Project>
+      <Name>Control_US</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MD\MD.vbproj">
+      <Project>{9e6888a8-bece-4978-bfb3-96abdaebb9a4}</Project>
+      <Name>MD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
