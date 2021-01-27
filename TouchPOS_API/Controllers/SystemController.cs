@@ -79,13 +79,13 @@ namespace TouchPOS_API.Controllers
 
             //Set the File Path.
             string filePath = HttpContext.Current.Server.MapPath("~/Files/") + fileName;
-            
+
             //Check whether File exists.
             if (!File.Exists(filePath))
             {
                 //Throw 404 (Not Found) exception if File not found.
                 ret.Respon.Result = false;
-                ret.Data = DateTime .Now ;
+                ret.Data = DateTime.Now;
                 ret.Respon.ErrorMessage = "ไม่พบไฟล์ :" + fileName;
                 return ret;
             }
@@ -95,7 +95,7 @@ namespace TouchPOS_API.Controllers
             //if (curdate > lasupdate)
             //{
             //    //Throw 404 (Not Found) exception if File not found.
-               
+
             //    ret.Respon.Result = false;
             //    ret.Respon.ErrorMessage = "ไม่พบรายการอัพเดทหรือไฟล์ไม่ล่าสุด :" + fileName;
             //    return ret;
@@ -104,7 +104,7 @@ namespace TouchPOS_API.Controllers
 
             //ส่งกลับไปเปรียบเทียบ
             ret.Respon.Result = true;
-            ret.Data = lasupdate.ToString ();
+            ret.Data = new Center().Condate(lasupdate, "ymd hh:mm:ss");
             ret.Respon.ErrorMessage = "";
             return ret;
         }
@@ -117,7 +117,7 @@ namespace TouchPOS_API.Controllers
 
             //Set the File Path.
             string filePath = HttpContext.Current.Server.MapPath("~/Files/") + fileName;
-           
+
             //Check whether File exists.
             if (!File.Exists(filePath))
             {
@@ -144,7 +144,7 @@ namespace TouchPOS_API.Controllers
             response.Content.Headers.ContentType = new MediaTypeHeaderValue(MimeMapping.GetMimeMapping(fileName));
 
             DateTime lasupdate = System.IO.File.GetLastWriteTime(filePath);
-            response.ReasonPhrase = lasupdate.ToString();
+            response.ReasonPhrase = new Center().Condate(lasupdate, "ymd hh:mm:ss");
             return response;
         }
 

@@ -48,7 +48,8 @@ Public Class API
                     Using stream As IO.Stream = ex.Response.GetResponseStream()
                         Using reader2 As IO.StreamReader = New IO.StreamReader(stream)
                             Dim jsonResponse = reader2.ReadToEnd()
-                            Return jsonResponse
+                            ' Return jsonResponse  convert to model ไม่ได้
+                            Throw New Exception(jsonResponse)
                         End Using
                     End Using
                 Else
@@ -174,7 +175,8 @@ Public Class API
                     Using stream As IO.Stream = ex.Response.GetResponseStream()
                         Using reader2 As IO.StreamReader = New IO.StreamReader(stream)
                             Dim jsonResponse = reader2.ReadToEnd()
-                            Return jsonResponse
+                            ' Return jsonResponse  convert to model ไม่ได้
+                            Throw New Exception(jsonResponse)
                         End Using
                     End Using
                 Else

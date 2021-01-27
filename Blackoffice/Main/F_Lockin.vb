@@ -4,81 +4,79 @@ Imports MD
 Imports Newtonsoft.Json
 Imports Blackoffice
 Public Class F_Lockin
-    Dim AUTO_UPDATE As AUTO_UPDATE
+    Dim AUTO_UP As AUTO_UPDATE
     Private Sub Button_US1_Click(sender As Object, e As EventArgs) Handles Button_US1.Click
         Application.Exit()
     End Sub
 
     Private Sub F_Load_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        'txt_user.SetPlaceholder("User")
-        'txt_password.SetPlaceholder("Passowrd")
-
-        Dim val = New CL_config().LoadConfigXML_MSSQL
-        If val Then
-            AUTO_UPDATE = New AUTO_UPDATE(Center.Data_Config.API_SRV, New AUTO_UPDATE.link_api With {
-                                            .SEL_SysVersion = Center.Get_API.SEL_SysVersion,
-                                            .Checkfile_update = Center.Get_API.Checkfile_update,
-                                            .DownloadFiles = Center.Get_API.DownloadFiles
-                                            }, AUTO_UPDATE.Update_mode.API)
+        Try
 
 
 
+            'txt_user.SetPlaceholder("User")
+            'txt_password.SetPlaceholder("Passowrd")
 
-            Dim val2 = New CL_config().test_conn("")
-            If val2 Then
-                Update_exe()
+            Dim val = New CL_config().LoadConfigXML_MSSQL
+            If val Then
+                AUTO_UP = New AUTO_UPDATE(Center.Data_Config.API_SRV, New AUTO_UPDATE.link_api With {
+                                                .SEL_SysVersion = Center.Get_API.SEL_SysVersion,
+                                                .Checkfile_update = Center.Get_API.Checkfile_update,
+                                                .DownloadFiles = Center.Get_API.DownloadFiles
+                                                }, AUTO_UPDATE.Update_mode.API)
 
 
-                Panel4.Visible = True
-                txt_user.Focus()
 
-            Else
-                'Messages.Texts("NO Config", " คุณยังไม่ได้ตั้งลิงค์ API ไม่สามารถโหลดร้านค้าได้ ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Errorr)
-                'config(True)
 
-                If Center.Data_Config.API_SRV.Trim = "" Then
-                    Messages.Texts("NO Config", " คุณยังไม่ได้ตั้งลิงค์ API ไม่สามารถโหลดร้านค้าได้ ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Errorr)
-                    config(True)
-                    'Else
-                    '    Messages.Texts("ขาดการเชื่อมต่อ", " เชื่อมต่อเซิร์ฟเวอร์ไม่สำเร็จ " & vbNewLine & " กรุณาตรวจสอบการการตั้งค่า หรือระบบเครือข่าย ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Errorr)
+                Dim val2 = New CL_config().test_conn("")
+                If val2 Then
+                    Update_exe()
+
+
+                    Panel4.Visible = True
+                    txt_user.Focus()
+
+                Else
+                    'Messages.Texts("NO Config", " คุณยังไม่ได้ตั้งลิงค์ API ไม่สามารถโหลดร้านค้าได้ ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Errorr)
+                    'config(True)
+
+                    If Center.Data_Config.API_SRV.Trim = "" Then
+                        Messages.Texts("NO Config", " คุณยังไม่ได้ตั้งลิงค์ API ไม่สามารถโหลดร้านค้าได้ ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Errorr)
+                        config(True)
+                        'Else
+                        '    Messages.Texts("ขาดการเชื่อมต่อ", " เชื่อมต่อเซิร์ฟเวอร์ไม่สำเร็จ " & vbNewLine & " กรุณาตรวจสอบการการตั้งค่า หรือระบบเครือข่าย ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Errorr)
+
+                    End If
 
                 End If
 
+                'Version
+                Label2.Text = "Version " & Center.version
+
+                lbl_pos_lastupdate.Text = Replace(AUTO_UP.version_InRoom, "_", " ")
             End If
-
-            'Version
-            Label2.Text = "Version " & Center.version
-
-            lbl_pos_lastupdate.Text = Replace(AUTO_UPDATE.version_InRoom, "_", " ")
-        End If
+        Catch ex As Exception
+            Msg_err.Show_Err(ex, Me.Text)
+        End Try
     End Sub
 
 
     Private Function Update_exe() As Boolean
         Try
 
-            If AUTO_UPDATE.Update() Then Return False
+            AUTO_UP.Update()
 
-            'If InStr(Application.StartupPath, "bin", CompareMethod.Text) > 0 Then
-            '    'ส่วนของ code
-            '    'AUTO_UPDATE.UpdateStucture()
-            'Else
-            '    'ส่วนของ EXE
-            '    If AUTO_UPDATE.version_Check("") Then Return False
+            Label2.Text = "Version " & Center.version
+            lbl_pos_lastupdate.Text = Replace(AUTO_UP.version_InRoom, "_", " ")
+
+            Dim ret_ver As New API_VersionModels.value
+            Dim json2_ver = New API(Center.Data_Config.API_SRV,).GETSON(Center.Get_API.API_Version)
+            Module1.API_version = json2_ver
+            lbl_api_lastupdate.Text = Replace(Replace(Module1.API_version, "_", " "), """", "")
+            'If lbl_api_lastupdate.Text <> lbl_pos_lastupdate.Text Then
+            '    Messages.Texts("เวอร์ชั่นไม่ตรงกัน", " Version Program กับ API ไม่ตรงกัน  ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Warning)
+            '    Application.Exit()
             'End If
-
-            'Label2.Text = "Version " & AUTO_UPDATE.version
-            'lbl_pos_lastupdate.Text = Replace(AUTO_UPDATE.version_InRoom, "_", " ")
-
-            'Dim ret_ver As New API_VersionModels.value
-            'Dim json2_ver = New API(Center.Data_Config.API_SRV,).GETSON(Center.Get_API.API_Version)
-            'Module1.API_version = json2_ver
-            'lbl_api_lastupdate.Text = Replace(Replace(Module1.API_version, "_", " "), """", "")
-            ''If lbl_api_lastupdate.Text <> lbl_pos_lastupdate.Text Then
-            ''    Messages.Texts("เวอร์ชั่นไม่ตรงกัน", " Version Program กับ API ไม่ตรงกัน  ", Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Warning)
-            ''    Application.Exit()
-            ''End If
         Catch ex As Exception
             Msg_err.Show_Err(ex, Me.Text)
             Return False

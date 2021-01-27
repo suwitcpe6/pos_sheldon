@@ -23,15 +23,15 @@ Partial Class F_Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_Main))
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node3")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node4")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node0", 1, 0, New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node5")
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node6")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node1", 1, 1, New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5})
-        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node7")
-        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node8")
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node2", 2, 2, New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8})
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node3")
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node4")
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node0", 1, 0, New System.Windows.Forms.TreeNode() {TreeNode10, TreeNode11})
+        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node5")
+        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node6")
+        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node1", 1, 1, New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14})
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node7")
+        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node8")
+        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node2", 2, 2, New System.Windows.Forms.TreeNode() {TreeNode16, TreeNode17})
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
@@ -290,7 +290,7 @@ Partial Class F_Main
         Me.lbl_Display.Name = "lbl_Display"
         Me.lbl_Display.Size = New System.Drawing.Size(725, 41)
         Me.lbl_Display.TabIndex = 0
-        Me.lbl_Display.Text = "Foodcort"
+        Me.lbl_Display.Text = "Stock Management"
         Me.lbl_Display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel5
@@ -398,37 +398,37 @@ Partial Class F_Main
         Me.Tree_Menu.FullRowSelect = True
         Me.Tree_Menu.Location = New System.Drawing.Point(0, 0)
         Me.Tree_Menu.Name = "Tree_Menu"
-        TreeNode1.Name = "Node3"
-        TreeNode1.Text = "Node3"
-        TreeNode2.Name = "Node4"
-        TreeNode2.Text = "Node4"
-        TreeNode3.BackColor = System.Drawing.Color.SteelBlue
-        TreeNode3.ForeColor = System.Drawing.Color.White
-        TreeNode3.ImageIndex = 1
-        TreeNode3.Name = "Node0"
-        TreeNode3.SelectedImageIndex = 0
-        TreeNode3.Text = "Node0"
-        TreeNode4.Name = "Node5"
-        TreeNode4.Text = "Node5"
-        TreeNode5.Name = "Node6"
-        TreeNode5.Text = "Node6"
-        TreeNode6.BackColor = System.Drawing.Color.SteelBlue
-        TreeNode6.ForeColor = System.Drawing.Color.White
-        TreeNode6.ImageIndex = 1
-        TreeNode6.Name = "Node1"
-        TreeNode6.SelectedImageIndex = 1
-        TreeNode6.Text = "Node1"
-        TreeNode7.Name = "Node7"
-        TreeNode7.Text = "Node7"
-        TreeNode8.Name = "Node8"
-        TreeNode8.Text = "Node8"
-        TreeNode9.BackColor = System.Drawing.Color.SteelBlue
-        TreeNode9.ForeColor = System.Drawing.Color.White
-        TreeNode9.ImageIndex = 2
-        TreeNode9.Name = "Node2"
-        TreeNode9.SelectedImageIndex = 2
-        TreeNode9.Text = "Node2"
-        Me.Tree_Menu.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode9})
+        TreeNode10.Name = "Node3"
+        TreeNode10.Text = "Node3"
+        TreeNode11.Name = "Node4"
+        TreeNode11.Text = "Node4"
+        TreeNode12.BackColor = System.Drawing.Color.SteelBlue
+        TreeNode12.ForeColor = System.Drawing.Color.White
+        TreeNode12.ImageIndex = 1
+        TreeNode12.Name = "Node0"
+        TreeNode12.SelectedImageIndex = 0
+        TreeNode12.Text = "Node0"
+        TreeNode13.Name = "Node5"
+        TreeNode13.Text = "Node5"
+        TreeNode14.Name = "Node6"
+        TreeNode14.Text = "Node6"
+        TreeNode15.BackColor = System.Drawing.Color.SteelBlue
+        TreeNode15.ForeColor = System.Drawing.Color.White
+        TreeNode15.ImageIndex = 1
+        TreeNode15.Name = "Node1"
+        TreeNode15.SelectedImageIndex = 1
+        TreeNode15.Text = "Node1"
+        TreeNode16.Name = "Node7"
+        TreeNode16.Text = "Node7"
+        TreeNode17.Name = "Node8"
+        TreeNode17.Text = "Node8"
+        TreeNode18.BackColor = System.Drawing.Color.SteelBlue
+        TreeNode18.ForeColor = System.Drawing.Color.White
+        TreeNode18.ImageIndex = 2
+        TreeNode18.Name = "Node2"
+        TreeNode18.SelectedImageIndex = 2
+        TreeNode18.Text = "Node2"
+        Me.Tree_Menu.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode12, TreeNode15, TreeNode18})
         Me.Tree_Menu.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Tree_Menu.ShowLines = False
         Me.Tree_Menu.ShowNodeToolTips = True
@@ -465,7 +465,7 @@ Partial Class F_Main
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "F_Main"
         Me.Opacity = 0.98R
-        Me.Text = "Foodcort"
+        Me.Text = "Stock Management"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

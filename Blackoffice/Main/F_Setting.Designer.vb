@@ -98,10 +98,10 @@ Partial Class F_Setting
         '
         Me.TB_POSConfig.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TB_POSConfig.Controls.Add(Me.Panel1)
-        Me.TB_POSConfig.Location = New System.Drawing.Point(4, 26)
+        Me.TB_POSConfig.Location = New System.Drawing.Point(4, 32)
         Me.TB_POSConfig.Name = "TB_POSConfig"
         Me.TB_POSConfig.Padding = New System.Windows.Forms.Padding(3)
-        Me.TB_POSConfig.Size = New System.Drawing.Size(862, 404)
+        Me.TB_POSConfig.Size = New System.Drawing.Size(862, 398)
         Me.TB_POSConfig.TabIndex = 0
         Me.TB_POSConfig.Text = "ตั้งค่า Client"
         '
@@ -116,7 +116,7 @@ Partial Class F_Setting
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(856, 398)
+        Me.Panel1.Size = New System.Drawing.Size(856, 392)
         Me.Panel1.TabIndex = 36
         '
         'Label_US1
@@ -136,7 +136,7 @@ Partial Class F_Setting
         Me.txt_api.ForeColor = System.Drawing.Color.DarkGreen
         Me.txt_api.Location = New System.Drawing.Point(43, 66)
         Me.txt_api.Name = "txt_api"
-        Me.txt_api.Size = New System.Drawing.Size(674, 29)
+        Me.txt_api.Size = New System.Drawing.Size(674, 34)
         Me.txt_api.TabIndex = 50
         Me.txt_api.Text = "https://localhost:44389/"
         Me.txt_api.US_Color_Border_Normal = System.Drawing.Color.RoyalBlue
@@ -162,12 +162,13 @@ Partial Class F_Setting
         Me.Button_US7.Font = New System.Drawing.Font("Leelawadee UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Button_US7.ForeColor = System.Drawing.Color.DimGray
         Me.Button_US7.Image = CType(resources.GetObject("Button_US7.Image"), System.Drawing.Image)
-        Me.Button_US7.Location = New System.Drawing.Point(723, 142)
+        Me.Button_US7.Location = New System.Drawing.Point(723, 136)
         Me.Button_US7.Name = "Button_US7"
         Me.Button_US7.Size = New System.Drawing.Size(123, 72)
         Me.Button_US7.TabIndex = 49
         Me.Button_US7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button_US7.UseVisualStyleBackColor = False
+        Me.Button_US7.Visible = False
         '
         'Label_US28
         '
@@ -178,6 +179,7 @@ Partial Class F_Setting
         Me.Label_US28.Size = New System.Drawing.Size(566, 158)
         Me.Label_US28.TabIndex = 48
         Me.Label_US28.Text = resources.GetString("Label_US28.Text")
+        Me.Label_US28.Visible = False
         '
         'Label_US27
         '
@@ -188,6 +190,7 @@ Partial Class F_Setting
         Me.Label_US27.Size = New System.Drawing.Size(116, 35)
         Me.Label_US27.TabIndex = 47
         Me.Label_US27.Text = "Source File :"
+        Me.Label_US27.Visible = False
         '
         'Txt_paht_srv
         '
@@ -211,15 +214,16 @@ Partial Class F_Setting
         Me.Txt_paht_srv.US_Number = False
         Me.Txt_paht_srv.US_Tag2 = ""
         Me.Txt_paht_srv.US_value = Nothing
+        Me.Txt_paht_srv.Visible = False
         '
         'TB_structure
         '
         Me.TB_structure.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TB_structure.Controls.Add(Me.Panel_US6)
-        Me.TB_structure.Location = New System.Drawing.Point(4, 26)
+        Me.TB_structure.Location = New System.Drawing.Point(4, 32)
         Me.TB_structure.Name = "TB_structure"
         Me.TB_structure.Padding = New System.Windows.Forms.Padding(3)
-        Me.TB_structure.Size = New System.Drawing.Size(862, 404)
+        Me.TB_structure.Size = New System.Drawing.Size(862, 398)
         Me.TB_structure.TabIndex = 1
         Me.TB_structure.Text = "อัพทเดทฐานข้อมูล"
         '
@@ -235,7 +239,7 @@ Partial Class F_Setting
         Me.Panel_US6.Font = New System.Drawing.Font("Leelawadee UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Panel_US6.Location = New System.Drawing.Point(3, 3)
         Me.Panel_US6.Name = "Panel_US6"
-        Me.Panel_US6.Size = New System.Drawing.Size(856, 398)
+        Me.Panel_US6.Size = New System.Drawing.Size(856, 392)
         Me.Panel_US6.TabIndex = 0
         '
         'P_notsuccess
@@ -326,10 +330,10 @@ Partial Class F_Setting
         Me.TB_systemconfig.Controls.Add(Me.Label_US33)
         Me.TB_systemconfig.Controls.Add(Me.GroupBox_US2)
         Me.TB_systemconfig.Controls.Add(Me.cbo_CUSGROUP)
-        Me.TB_systemconfig.Location = New System.Drawing.Point(4, 26)
+        Me.TB_systemconfig.Location = New System.Drawing.Point(4, 32)
         Me.TB_systemconfig.Name = "TB_systemconfig"
         Me.TB_systemconfig.Padding = New System.Windows.Forms.Padding(3)
-        Me.TB_systemconfig.Size = New System.Drawing.Size(862, 404)
+        Me.TB_systemconfig.Size = New System.Drawing.Size(862, 398)
         Me.TB_systemconfig.TabIndex = 3
         Me.TB_systemconfig.Text = "ตั้งค่าทั้งระบบ"
         '
@@ -353,7 +357,7 @@ Partial Class F_Setting
         Me.RB_prepaid.ForeColor = System.Drawing.Color.Red
         Me.RB_prepaid.Location = New System.Drawing.Point(39, 24)
         Me.RB_prepaid.Name = "RB_prepaid"
-        Me.RB_prepaid.Size = New System.Drawing.Size(122, 23)
+        Me.RB_prepaid.Size = New System.Drawing.Size(150, 27)
         Me.RB_prepaid.TabIndex = 29
         Me.RB_prepaid.TabStop = True
         Me.RB_prepaid.Tag = "prepaid"
@@ -367,7 +371,7 @@ Partial Class F_Setting
         Me.RB_postpaid.ForeColor = System.Drawing.Color.Red
         Me.RB_postpaid.Location = New System.Drawing.Point(39, 54)
         Me.RB_postpaid.Name = "RB_postpaid"
-        Me.RB_postpaid.Size = New System.Drawing.Size(151, 23)
+        Me.RB_postpaid.Size = New System.Drawing.Size(186, 27)
         Me.RB_postpaid.TabIndex = 30
         Me.RB_postpaid.Tag = "postpaid"
         Me.RB_postpaid.Text = "postpaid  (ขายเครดิต)"
@@ -379,7 +383,7 @@ Partial Class F_Setting
         Me.chk_usestock.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.chk_usestock.Location = New System.Drawing.Point(623, 48)
         Me.chk_usestock.Name = "chk_usestock"
-        Me.chk_usestock.Size = New System.Drawing.Size(118, 23)
+        Me.chk_usestock.Size = New System.Drawing.Size(145, 27)
         Me.chk_usestock.TabIndex = 29
         Me.chk_usestock.Text = "ใช้งานระบบสต๊อก"
         Me.chk_usestock.UseVisualStyleBackColor = True
@@ -454,7 +458,7 @@ Partial Class F_Setting
         Me.cbo_WALLET_TYPE.Items.AddRange(New Object() {"EDC", "API"})
         Me.cbo_WALLET_TYPE.Location = New System.Drawing.Point(172, 24)
         Me.cbo_WALLET_TYPE.Name = "cbo_WALLET_TYPE"
-        Me.cbo_WALLET_TYPE.Size = New System.Drawing.Size(425, 25)
+        Me.cbo_WALLET_TYPE.Size = New System.Drawing.Size(425, 29)
         Me.cbo_WALLET_TYPE.TabIndex = 20
         '
         'Label_US35
@@ -486,7 +490,7 @@ Partial Class F_Setting
         Me.cbo_vender.Items.AddRange(New Object() {"GHL"})
         Me.cbo_vender.Location = New System.Drawing.Point(172, 94)
         Me.cbo_vender.Name = "cbo_vender"
-        Me.cbo_vender.Size = New System.Drawing.Size(425, 25)
+        Me.cbo_vender.Size = New System.Drawing.Size(425, 29)
         Me.cbo_vender.TabIndex = 24
         '
         'Combobox_US2
@@ -498,7 +502,7 @@ Partial Class F_Setting
         Me.Combobox_US2.Items.AddRange(New Object() {"EDC", "API"})
         Me.Combobox_US2.Location = New System.Drawing.Point(172, 24)
         Me.Combobox_US2.Name = "Combobox_US2"
-        Me.Combobox_US2.Size = New System.Drawing.Size(425, 29)
+        Me.Combobox_US2.Size = New System.Drawing.Size(425, 36)
         Me.Combobox_US2.TabIndex = 20
         Me.Combobox_US2.Text = "เลือก"
         '
@@ -511,7 +515,7 @@ Partial Class F_Setting
         Me.cbo_CONN_LINK.Items.AddRange(New Object() {"WIFI", "BLUETOOTH"})
         Me.cbo_CONN_LINK.Location = New System.Drawing.Point(172, 59)
         Me.cbo_CONN_LINK.Name = "cbo_CONN_LINK"
-        Me.cbo_CONN_LINK.Size = New System.Drawing.Size(425, 25)
+        Me.cbo_CONN_LINK.Size = New System.Drawing.Size(425, 29)
         Me.cbo_CONN_LINK.TabIndex = 22
         '
         'Label_US31
@@ -543,7 +547,7 @@ Partial Class F_Setting
         Me.cbo_CUSGROUP.Items.AddRange(New Object() {"CPN", "HOMEPRO", "TOP", "OTHER"})
         Me.cbo_CUSGROUP.Location = New System.Drawing.Point(178, 47)
         Me.cbo_CUSGROUP.Name = "cbo_CUSGROUP"
-        Me.cbo_CUSGROUP.Size = New System.Drawing.Size(425, 25)
+        Me.cbo_CUSGROUP.Size = New System.Drawing.Size(425, 29)
         Me.cbo_CUSGROUP.TabIndex = 18
         '
         'Panel_US8

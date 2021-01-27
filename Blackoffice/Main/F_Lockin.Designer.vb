@@ -127,9 +127,9 @@ Partial Class F_Lockin
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(66, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(215, 46)
+        Me.Label1.Size = New System.Drawing.Size(432, 58)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Foood Cort"
+        Me.Label1.Text = "Stock Management"
         '
         'btn_config
         '
@@ -165,9 +165,9 @@ Partial Class F_Lockin
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label2.Location = New System.Drawing.Point(141, 12)
+        Me.Label2.Location = New System.Drawing.Point(125, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 17)
+        Me.Label2.Size = New System.Drawing.Size(114, 23)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Version 2.0.0"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -208,7 +208,7 @@ Partial Class F_Lockin
         Me.Label11.ForeColor = System.Drawing.Color.DarkOrange
         Me.Label11.Location = New System.Drawing.Point(20, 48)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(92, 25)
+        Me.Label11.Size = New System.Drawing.Size(113, 32)
         Me.Label11.TabIndex = 11
         Me.Label11.Text = "Password"
         '
@@ -220,7 +220,7 @@ Partial Class F_Lockin
         Me.Label9.ForeColor = System.Drawing.Color.DarkOrange
         Me.Label9.Location = New System.Drawing.Point(62, 10)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(50, 25)
+        Me.Label9.Size = New System.Drawing.Size(62, 32)
         Me.Label9.TabIndex = 10
         Me.Label9.Text = "User"
         '
@@ -231,7 +231,7 @@ Partial Class F_Lockin
         Me.txt_user.ForeColor = System.Drawing.Color.Black
         Me.txt_user.Location = New System.Drawing.Point(118, 7)
         Me.txt_user.Name = "txt_user"
-        Me.txt_user.Size = New System.Drawing.Size(385, 32)
+        Me.txt_user.Size = New System.Drawing.Size(385, 38)
         Me.txt_user.TabIndex = 2
         Me.txt_user.US_Color_Border_Normal = System.Drawing.Color.Orange
         Me.txt_user.US_Color_Borderr_Focus = System.Drawing.Color.OrangeRed
@@ -253,7 +253,7 @@ Partial Class F_Lockin
         Me.txt_password.ForeColor = System.Drawing.Color.Black
         Me.txt_password.Location = New System.Drawing.Point(118, 45)
         Me.txt_password.Name = "txt_password"
-        Me.txt_password.Size = New System.Drawing.Size(385, 32)
+        Me.txt_password.Size = New System.Drawing.Size(385, 38)
         Me.txt_password.TabIndex = 3
         Me.txt_password.US_Color_Border_Normal = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txt_password.US_Color_Borderr_Focus = System.Drawing.Color.Blue
@@ -308,7 +308,7 @@ Partial Class F_Lockin
         Me.Label7.ForeColor = System.Drawing.Color.OrangeRed
         Me.Label7.Location = New System.Drawing.Point(356, 155)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(410, 17)
+        Me.Label7.Size = New System.Drawing.Size(533, 23)
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Warning ! Unauthorized use or copy program is prohibits by law."
         '
@@ -319,7 +319,7 @@ Partial Class F_Lockin
         Me.Label_US1.ForeColor = System.Drawing.Color.DimGray
         Me.Label_US1.Location = New System.Drawing.Point(142, 61)
         Me.Label_US1.Name = "Label_US1"
-        Me.Label_US1.Size = New System.Drawing.Size(168, 34)
+        Me.Label_US1.Size = New System.Drawing.Size(201, 42)
         Me.Label_US1.TabIndex = 7
         Me.Label_US1.Text = "Wellcome...  " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sign in with your account." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -354,7 +354,7 @@ Partial Class F_Lockin
         Me.Label3.ForeColor = System.Drawing.Color.Maroon
         Me.Label3.Location = New System.Drawing.Point(42, 10)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 27)
+        Me.Label3.Size = New System.Drawing.Size(109, 34)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "FoodCort"
         '
@@ -367,7 +367,7 @@ Partial Class F_Lockin
         Me.Label4.ForeColor = System.Drawing.Color.Red
         Me.Label4.Location = New System.Drawing.Point(151, 12)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 17)
+        Me.Label4.Size = New System.Drawing.Size(95, 23)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "For win 10"
         '
@@ -392,7 +392,7 @@ Partial Class F_Lockin
         Me.Label6.ForeColor = System.Drawing.Color.LightCoral
         Me.Label6.Location = New System.Drawing.Point(36, 71)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(187, 17)
+        Me.Label6.Size = New System.Drawing.Size(242, 23)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "S.Sahalara(Thailand) Co.,Ltd."
         '
@@ -405,7 +405,7 @@ Partial Class F_Lockin
         Me.Label5.ForeColor = System.Drawing.Color.LightCoral
         Me.Label5.Location = New System.Drawing.Point(122, 40)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(101, 17)
+        Me.Label5.Size = New System.Drawing.Size(136, 23)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Copyright 2019"
         '
@@ -430,23 +430,25 @@ Partial Class F_Lockin
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label8.Location = New System.Drawing.Point(31, 63)
+        Me.Label8.Location = New System.Drawing.Point(30, 74)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(84, 17)
+        Me.Label8.Size = New System.Drawing.Size(108, 23)
         Me.Label8.TabIndex = 9
         Me.Label8.Text = "API UPDATE"
+        Me.Label8.Visible = False
         '
         'lbl_api_lastupdate
         '
         Me.lbl_api_lastupdate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_api_lastupdate.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbl_api_lastupdate.ForeColor = System.Drawing.Color.DarkOrange
-        Me.lbl_api_lastupdate.Location = New System.Drawing.Point(119, 63)
+        Me.lbl_api_lastupdate.Location = New System.Drawing.Point(119, 80)
         Me.lbl_api_lastupdate.Name = "lbl_api_lastupdate"
         Me.lbl_api_lastupdate.Size = New System.Drawing.Size(110, 17)
         Me.lbl_api_lastupdate.TabIndex = 8
         Me.lbl_api_lastupdate.Text = "Version"
         Me.lbl_api_lastupdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lbl_api_lastupdate.Visible = False
         '
         'Label10
         '
@@ -456,9 +458,9 @@ Partial Class F_Lockin
         Me.Label10.ForeColor = System.Drawing.Color.DarkOrange
         Me.Label10.Location = New System.Drawing.Point(31, 46)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(88, 17)
+        Me.Label10.Size = New System.Drawing.Size(113, 23)
         Me.Label10.TabIndex = 7
-        Me.Label10.Text = "POS UPDATE"
+        Me.Label10.Text = "Last UPDATE"
         '
         'lbl_pos_lastupdate
         '

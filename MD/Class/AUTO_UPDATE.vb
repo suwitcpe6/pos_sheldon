@@ -1,10 +1,7 @@
 ﻿
 Imports System.IO
-'Imports PublicClassUsed
 Imports Newtonsoft.Json
 Imports System.IO.Compression
-Imports ComponentAce.Compression.Archiver
-Imports ComponentAce.Compression.ZipForge
 Public Class AUTO_UPDATE
     Public version_InRoom As String = "" ' System.Configuration.ConfigurationManager.AppSettings("LastUpdate").ToString
 
@@ -42,16 +39,30 @@ Public Class AUTO_UPDATE
             If Me.sub_link_api.Checkfile_update = "" Then Throw New Exception("Checkfile_update not found")
         End If
 
+        If Not File.Exists(Application.StartupPath & program_update_name) Then Throw New Exception("POS_UPDATE.exe not found ,Unable to check for updates")
+
 
     End Sub
 
     Public Function Update() As Boolean
+
+        If InStr(Application.StartupPath, "\bin\Debug", CompareMethod.Text) > 0 Then
+            Dim data_ReadFile = System.IO.File.GetLastWriteTime(Application.StartupPath & "\" & Get_application_name())
+            Dim dd As String = CL_date.Condate(Date.Now, "yyyy/MM/dd HH:mm:ss")
+            CL_File.Savefile_overwrite(Application.StartupPath & "\" & version_filename, dd)
+
+            'save Release
+            Dim Release_path = Application.StartupPath.Replace("bin\Debug", "bin\Release")
+            CL_File.Savefile_overwrite(Release_path & "\" & version_filename, dd)
+            Return False
+        End If
 
         If Me.mode = Update_mode.Shared_file Then
             Update_shared_file()
         Else
             Update_API()
         End If
+
     End Function
 
 
@@ -159,23 +170,23 @@ Public Class AUTO_UPDATE
         End If
         Return False
     End Function
-    Public Sub SaveConfigSYSVersion()
-        Try
-            Dim FileDLL_ver As String = "\" & version_filename
-            If File.Exists(Application.StartupPath & FileDLL_ver) = True Then
-                File.Delete((Application.StartupPath & FileDLL_ver))
-            End If
-            Dim MyWriter As New StreamWriter(Application.StartupPath & FileDLL_ver, FileMode.Append)
-            Dim str As String
+    'Public Sub SaveConfigSYSVersion(last_update As String, filename As String)
+    '    Try
+    '        Dim FileDLL_ver As String = "\" & version_filename
+    '        If File.Exists(Application.StartupPath & FileDLL_ver) = True Then
+    '            File.Delete((Application.StartupPath & FileDLL_ver))
+    '        End If
+    '        Dim MyWriter As New StreamWriter(Application.StartupPath & FileDLL_ver, FileMode.Append)
+    '        Dim str As String
 
-            str = Me.version_InRoom
-            MyWriter.WriteLine(str, True)
-            MyWriter.Close()
+    '        str = last_update
+    '        MyWriter.WriteLine(str, True)
+    '        MyWriter.Close()
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
-    End Sub
+    '    End Try
+    'End Sub
 
 
 #End Region
@@ -256,7 +267,7 @@ Public Class AUTO_UPDATE
             Dim p As New Process
 
             'p.StartInfo.Arguments = String.Format("""{0}"" ""{1}"" ""{2}"" ""{3}"" ""{4}""", Extract_folder_name, Tmp_update, path_start, Appname, colorBackGround)
-            p.StartInfo.Arguments = String.Format("""{0}"" ""{1}"" ""{2}"" ""{3}"" ""{4}""", Extract_folder_name, Tmp_update, "D:\test_update", Appname, colorBackGround)
+            p.StartInfo.Arguments = String.Format("""{0}"" ""{1}"" ""{2}"" ""{3}"" ""{4}""", Extract_folder_name, Tmp_update, path_start, Appname, colorBackGround)
 
             p.StartInfo.FileName = Application.StartupPath & program_update_name
             p.Start()
@@ -340,13 +351,11 @@ Public Class AUTO_UPDATE
         'ZipFile.CreateFromDirectory(startPath, zipPath)
 
         Dim di As DirectoryInfo = New DirectoryInfo(extractPath)
-        If di.Exists Then
-            di.Delete(True)
-        End If
-        '.net 4.6.1
-        ZipFile.ExtractToDirectory(zipPath, extractPath)
-
-
+            If di.Exists Then
+                di.Delete(True)
+            End If
+            '.net 4.6.1
+            ZipFile.ExtractToDirectory(zipPath, extractPath)
 
     End Function
     Private Function Extractfolder_Name(value)
