@@ -14,9 +14,13 @@ Public Class F_Lockin
 
 
 
+
         Label2.Text = "Version " & AUTO_UPDATE.version
 
         lbl_pos_lastupdate.Text = Replace(AUTO_UPDATE.version_InRoom, "_", " ")
+
+
+
 
 
         'txt_user.SetPlaceholder("User")
