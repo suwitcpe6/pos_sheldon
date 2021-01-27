@@ -2,6 +2,7 @@
 Imports Newtonsoft.Json
 Imports WeifenLuo.WinFormsUI
 Public Class Center
+    Public Shared version As String = System.Configuration.ConfigurationManager.AppSettings("Version").ToString
     Public Shared dt_menu As New DataTable
     Public Shared icon As Icon
     'Public Shared f_main As F_Main

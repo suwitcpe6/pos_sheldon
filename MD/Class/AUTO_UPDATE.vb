@@ -1,110 +1,134 @@
-﻿Imports System.Text
+﻿
 Imports System.IO
-Imports System.Data
-Imports System.Data.Sql
-Imports System.Data.SqlClient
 'Imports PublicClassUsed
-Imports System.Management
 Imports Newtonsoft.Json
-Imports Control_us
 Imports System.IO.Compression
-
+Imports ComponentAce.Compression.Archiver
+Imports ComponentAce.Compression.ZipForge
 Public Class AUTO_UPDATE
     Public version_InRoom As String = "" ' System.Configuration.ConfigurationManager.AppSettings("LastUpdate").ToString
 
     Dim version_filename As String = "sys.version.dll"
     Dim colorBackGround As String = "Green"
     Dim filename_last_update As String = "last_update.dll"
+    Dim program_update_name As String = "\Update\POS_UPDATE.exe"
+    Dim sys As String = "POS"
 
-    Sub New()
+    Dim API_SRV As String = ""
+    Dim sub_link_api As New link_api
+
+    Property mode As Update_mode
+
+    Public Class link_api
+        Public SEL_SysVersion As String = ""
+        Public DownloadFiles As String = ""
+        Public Checkfile_update As String = ""
+    End Class
+    Public Enum Update_mode
+        Shared_file = 0
+        API = 1
+    End Enum
+
+    Sub New(API_SRV As String, link_api As link_api, Update_mode As Update_mode, Optional sys As String = "POS")
+        Me.sys = sys
+        Me.API_SRV = API_SRV
+        Me.sub_link_api = link_api
+        Me.mode = Update_mode
+        If Me.API_SRV = "" Then Throw New Exception("API_SRV not found")
+        If Update_mode = Update_mode.Shared_file Then
+            If Me.sub_link_api.SEL_SysVersion = "" Then Throw New Exception("SEL_SysVersion not found")
+        Else
+            If Me.sub_link_api.DownloadFiles = "" Then Throw New Exception("DownloadFiles not found")
+            If Me.sub_link_api.Checkfile_update = "" Then Throw New Exception("Checkfile_update not found")
+        End If
+
 
     End Sub
+
+    Public Function Update() As Boolean
+
+        If Me.mode = Update_mode.Shared_file Then
+            Update_shared_file()
+        Else
+            Update_API()
+        End If
+    End Function
+
+
+
+
 #Region "Auto update  shared file"
-    'Public Function Update_shared_file(ByVal type As String) As Boolean
-
-
-    'Dim sys As String = "POS"
-    'Dim runexe As String = "Blackoffice.exe"
-
-
-    '    Dim pathServ As String = get_pathServer(sys)
-    '    If pathServ = "" Then
-    '        MessageBox.Show("ไม่พบ Path File server ", "ผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    '        Return False
-    '    End If
-
-    '    Dim pathCnt As String = Application.StartupPath & "\Tmp_update"
-
-    '    Dim di As DirectoryInfo = New DirectoryInfo(pathCnt)
-    '    If Not di.Exists Then
-    '        di.Create()
-    '    End If
-
-    '    Dim pathCnt_start As String = Application.StartupPath
-    '    Dim verServ As String = get_File_version(pathServ & "\sys.version.dll")
-    '    Me.version_InRoom = get_File_version(Application.StartupPath & "\sys.version.dll")
-    '    If Trim(verServ) = "" Then
-    '        Return False
-    '    End If
-    '    If Trim(verServ) <> Trim(Me.version_InRoom) Then
-
-    '        For Each fi As IO.FileInfo In di.GetFiles("*", SearchOption.AllDirectories)
-    '            Dim fileNameOnly As String = fi.Name
-    '            Dim createDate As Date = fi.CreationTime.Date
-    '            fi.Delete()
-    '        Next
-
-    '        Dim p As New Process
-    '        p.StartInfo.Arguments = String.Format("""{0}"" ""{1}"" ""{2}"" ""{3}"" ""{4}""", pathServ, pathCnt, pathCnt_start, runexe, colorBackGround)
-    '        p.StartInfo.FileName = Application.StartupPath & "\Update\POS_UPDATE.exe"
-    '        p.Start()
-
-    '        For Each prog As Process In Process.GetProcesses
-    '            If prog.ProcessName = "TouchPOS" Then
-    '                prog.Kill()
-    '            End If
-    '        Next
-    '        Return True
-    '    Else
-    '        Return False
-    '    End If
-
-    'End Function
+    Public Function Update_shared_file() As Boolean
 
 
 
-    'Public Function get_pathServer(ByVal sys As String) As String
-    '    Try
-    '        Dim ret2 As New SysVersionModel.value
-    '        Dim json2 = New MD.API(Center.Data_Config.API_SRV,).GETSON(Center.Get_API.SEL_SysVersion & "0")
-    '        'Dim json2 = New API(Center.Data_Config.API,).GETSON(String.Format(Center.Link_API.Get_API.SEL_TenderCL, Tender_val.Shop_id))
-    '        ret2 = (JsonConvert.DeserializeObject(Of SysVersionModel.value)(json2))
-    '        If ret2.Respon.Result Then
-
-    '            Return ret2.Data(0).path
-    '        Else
-    '            If ret2.Respon.SystemErrorMessage <> "" Then
-    '                Throw New Exception(ret2.Respon.SystemErrorMessage.ToString)
-    '            Else
-    '                Messages.Texts("Error", ret2.Respon.ErrorMessage, Messages.ButtonType.OkOnly, Messages.MessageBoxIcon.Errorr)
-    '            End If
-    '        End If
-    '    Catch ex As Exception
-    '        Return ""
-    '    End Try
+        Dim Appname As String = Get_application_name() '"Blackoffice.exe"
 
 
+        Dim pathServ As String = get_pathServer(sys)
+        If pathServ = "" Then
+            MessageBox.Show("ไม่พบ Path File server ", "ผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return False
+        End If
 
+        Dim pathCnt As String = Application.StartupPath & "\Tmp_update"
 
-    '    'Dim conn As New PrivateClassConnect
-    '    'Dim sql As String
-    '    'sql = " SELECT path  FROM  SysVersion"
-    '    'Dim dt As DataTable = conn.GetData(sql, strConn2)
-    '    'If dt.Rows.Count > 0 Then Return dt.Rows(0)(0)
+        Dim di As DirectoryInfo = New DirectoryInfo(pathCnt)
+        If Not di.Exists Then
+            di.Create()
+        End If
 
-    '    'Return ""
-    'End Function
+        Dim pathCnt_start As String = Application.StartupPath
+        Dim verServ As String = get_File_version(pathServ & "\" & version_filename)
+        Me.version_InRoom = get_File_version(Application.StartupPath & "\" & version_filename)
+        If Trim(verServ) = "" Then
+            Return False
+        End If
+        If Trim(verServ) <> Trim(Me.version_InRoom) Then
 
+            For Each fi As IO.FileInfo In di.GetFiles("*", SearchOption.AllDirectories)
+                Dim fileNameOnly As String = fi.Name
+                Dim createDate As Date = fi.CreationTime.Date
+                fi.Delete()
+            Next
+
+            Dim p As New Process
+            p.StartInfo.Arguments = String.Format("""{0}"" ""{1}"" ""{2}"" ""{3}"" ""{4}""", pathServ, pathCnt, pathCnt_start, Appname, colorBackGround)
+            p.StartInfo.FileName = Application.StartupPath & program_update_name
+            p.Start()
+
+            For Each prog As Process In Process.GetProcesses
+                If prog.ProcessName = Appname Then
+                    prog.Kill()
+                End If
+            Next
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+    Public Function get_pathServer(ByVal sys As String) As String
+        Try
+            Dim ret2 As New SysVersionModel.value
+            Dim json2 = New MD.API(API_SRV).GETSON(sub_link_api.SEL_SysVersion & "0")
+            'Dim json2 = New API(Center.Data_Config.API,).GETSON(String.Format(Center.Link_API.Get_API.SEL_TenderCL, Tender_val.Shop_id))
+            ret2 = (JsonConvert.DeserializeObject(Of SysVersionModel.value)(json2))
+            If ret2.Respon.Result Then
+
+                Return ret2.Data(0).path
+            Else
+                If ret2.Respon.SystemErrorMessage <> "" Then
+                    Throw New Exception(ret2.Respon.SystemErrorMessage.ToString)
+                Else
+                    Throw New Exception(ret2.Respon.ErrorMessage.ToString)
+                End If
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
     Public Function get_File_version(ByVal _path As String) As String
         Try
 
@@ -129,30 +153,29 @@ Public Class AUTO_UPDATE
         End Try
         Return ""
     End Function
-    'Public Shared Function except_updateverstionexe(ByVal ex_name As String) As Boolean
-    '    If InStr(Application.StartupPath, ex_name, CompareMethod.Text) > 0 Then
-    '        Return True
-    '    End If
-    '    Return False
-    'End Function
+    Public Shared Function except_updateverstionexe(ByVal ex_name As String) As Boolean
+        If InStr(Application.StartupPath, ex_name, CompareMethod.Text) > 0 Then
+            Return True
+        End If
+        Return False
+    End Function
+    Public Sub SaveConfigSYSVersion()
+        Try
+            Dim FileDLL_ver As String = "\" & version_filename
+            If File.Exists(Application.StartupPath & FileDLL_ver) = True Then
+                File.Delete((Application.StartupPath & FileDLL_ver))
+            End If
+            Dim MyWriter As New StreamWriter(Application.StartupPath & FileDLL_ver, FileMode.Append)
+            Dim str As String
 
-    'Public Sub SaveConfigSYSVersion()
-    '    Try
-    '        Dim FileDLL_ver As String = "\" & version_filename
-    '        If File.Exists(Application.StartupPath & FileDLL_ver) = True Then
-    '            File.Delete((Application.StartupPath & FileDLL_ver))
-    '        End If
-    '        Dim MyWriter As New StreamWriter(Application.StartupPath & FileDLL_ver, FileMode.Append)
-    '        Dim str As String
+            str = Me.version_InRoom
+            MyWriter.WriteLine(str, True)
+            MyWriter.Close()
 
-    '        str = Me.version_InRoom
-    '        MyWriter.WriteLine(str, True)
-    '        MyWriter.Close()
+        Catch ex As Exception
 
-    '    Catch ex As Exception
-
-    '    End Try
-    'End Sub
+        End Try
+    End Sub
 
 
 #End Region
@@ -165,19 +188,12 @@ Public Class AUTO_UPDATE
         Return appName
     End Function
 
-    Public Function Update_API(ByVal type As String) As Boolean
+    Public Function Update_API() As Boolean
 
 
         'Dim sys As String = "POS"
         Dim Appname As String = Get_application_name()
         Dim colorBackGround As String = "Green"
-
-
-        'Dim pathServ As String = get_pathServer(sys)
-        'If pathServ = "" Then
-        '    MessageBox.Show("ไม่พบ Path File server ", "ผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '    Return False
-        'End If
 
         Dim Tmp_update As String = Application.StartupPath & "\Tmp_update"
         Dim di As DirectoryInfo = New DirectoryInfo(Tmp_update)
@@ -239,15 +255,10 @@ Public Class AUTO_UPDATE
 
             Dim p As New Process
 
-            'D:\SOR\Shell_don\TouchPOS\Blackoffice\bin\Debug\download\Blackoffice
-            'D:\SOR\Shell_don\TouchPOS\Blackoffice\bin\Debug\Tmp_update
-            'D:\test_update
-            'Blackoffice.exe
-            'Green
             'p.StartInfo.Arguments = String.Format("""{0}"" ""{1}"" ""{2}"" ""{3}"" ""{4}""", Extract_folder_name, Tmp_update, path_start, Appname, colorBackGround)
             p.StartInfo.Arguments = String.Format("""{0}"" ""{1}"" ""{2}"" ""{3}"" ""{4}""", Extract_folder_name, Tmp_update, "D:\test_update", Appname, colorBackGround)
 
-            p.StartInfo.FileName = Application.StartupPath & "\Update\POS_UPDATE.exe"
+            p.StartInfo.FileName = Application.StartupPath & program_update_name
             p.Start()
 
             For Each prog As Process In Process.GetProcesses
@@ -264,8 +275,8 @@ Public Class AUTO_UPDATE
     Private Function downloadfile(filename As String, path_download As String) As Boolean
 
 
-        Dim url = String.Format(Center.Get_API.DownloadFiles, filename)
-        Dim ret = New MD.API(Center.Data_Config.API_SRV,).Download(url, path_download & "\" & filename)
+        Dim url = String.Format(sub_link_api.DownloadFiles, filename)
+        Dim ret = New MD.API(Me.API_SRV).Download(url, path_download & "\" & filename)
 
         If Not File.Exists(path_download & "\" & filename) Then
             Return False
@@ -282,8 +293,8 @@ Public Class AUTO_UPDATE
 
     Public Function checkfile(ByVal pathfile As String, ByVal filename As String, ByVal fileverServ As String) As Boolean
         Dim ret2 As New SysVersionModel.value_fileupdate
-        Dim url As String = String.Format(Center.Get_API.Checkfile_update, filename)
-        Dim json2 = New MD.API(Center.Data_Config.API_SRV,).GETSON(url)
+        Dim url As String = String.Format(sub_link_api.Checkfile_update, filename)
+        Dim json2 = New MD.API(Me.API_SRV,).GETSON(url)
         'Dim json2 = New API(Center.Data_Config.API,).GETSON(String.Format(Center.Link_API.Get_API.SEL_TenderCL, Tender_val.Shop_id))
         ret2 = (JsonConvert.DeserializeObject(Of SysVersionModel.value_fileupdate)(json2))
         If ret2.Respon.Result Then
@@ -332,8 +343,10 @@ Public Class AUTO_UPDATE
         If di.Exists Then
             di.Delete(True)
         End If
-
+        '.net 4.6.1
         ZipFile.ExtractToDirectory(zipPath, extractPath)
+
+
 
     End Function
     Private Function Extractfolder_Name(value)

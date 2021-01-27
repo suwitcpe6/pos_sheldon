@@ -6,15 +6,16 @@ Imports Newtonsoft.Json
 Public Class API
     Dim Timeout As Integer = 0 '(1000 * 60) * 5
     Dim Link_srv As String = ""
-    Sub New(Link As String, Optional ByVal val As Integer = 20)
+    Sub New(Link As String, Optional ByVal val As Integer = 30)
         Me.Link_srv = Link
         Timeout = (1000) * val
     End Sub
     Public Enum set_Timeout
+
         Min_1 = 60
-        Min_2 = 60
-        Min_5 = 60
-        Min_10 = 60
+        Min_2 = 120
+        Min_5 = 300
+        Min_10 = 600
 
 
 
